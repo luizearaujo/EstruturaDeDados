@@ -90,5 +90,16 @@
             <tr><td>typeof {name:Dario}</td><td>object</td></tr>
         </table>
         <script src="js/typeof.js"></script>
+        <h2>Truthy e falsy</h2>
+        <table border="1">
+            <tr><td>Tipo do valor</td><td>Resultado</td></tr>
+            <tr><td>Indefinido</td><td>false</td></tr>
+            <tr><td>Nulo</td><td>false</td></tr>
+            <tr><td>Booleano</td><td>Verdadeiro é true e falso é false</td></tr>
+            <tr><td>Número</td><td>O resultado é false para +0, -0, NaN; Caso contráriom o resultado é true</td></tr>
+            <tr><td>String</td><td>O resultado é false se a string for vazia (o tamanho é 0); caso contrário o resultado é true (tamano > 1)</td></tr>
+            <tr><td>Objeto</td><td>true</td></tr>
+        </table>
+        <script src="js/truthy-falsy.js"></script>
     </body>
 </html>
