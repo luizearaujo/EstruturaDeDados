@@ -63,3 +63,22 @@ console.log('>>> Templates literais');
 let raio = 40;
 let area = circleArea3(40);
 console.log(`A área do circulo com raio ${raio} é igual a ${area}.`);
+
+console.log('>>> Valores Padrões');
+function sum(a , b){
+    if (a === undefined){
+        a = 0;
+    }
+    if (b === undefined){
+        b = 0;
+    }
+
+    return a + b;
+}
+
+function sumDefault( a = 0, b = 0){
+    return a + b;
+}
+
+console.log(`Sem valor padrão:: ${sum(1)}`);
+console.log(`Com valor padrão:: ${sumDefault()}`);
