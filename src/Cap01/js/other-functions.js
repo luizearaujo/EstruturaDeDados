@@ -41,3 +41,20 @@ console.log('>>> Constant');
 
 const PI = 3.141593;
 console.log('PI: ' + PI);
+
+console.log('>>> Arrow Functions');
+var circleArea = function circleArea(r){
+    var area = PI * r * r;
+    return area;
+}
+
+let circleArea2 = (r) => {
+    let area = PI * r * r;
+    return area;
+}
+
+let circleArea3 = (r) => PI * r * r;
+
+console.log(circleArea(10));
+console.log(circleArea2(20));
+console.log(circleArea3(30));
