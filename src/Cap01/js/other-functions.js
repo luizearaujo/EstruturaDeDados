@@ -58,3 +58,8 @@ let circleArea3 = (r) => PI * r * r;
 console.log(circleArea(10));
 console.log(circleArea2(20));
 console.log(circleArea3(30));
+
+console.log('>>> Templates literais');
+let raio = 40;
+let area = circleArea3(40);
+console.log(`A área do circulo com raio ${raio} é igual a ${area}.`);
