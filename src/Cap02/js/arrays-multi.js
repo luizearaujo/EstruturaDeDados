@@ -121,3 +121,25 @@ console.log(numbersReverse);
 
 var numbersSort = numbersReverse.sort();
 console.log(numbersSort);
+
+var numbersMySort = numbers.sort((a,b) => a-b );
+console.log(numbersMySort);
+
+var friends = [
+    {name: 'Luiz', age:44},
+    {name:'Daylene', age:37},
+    {name: 'Benjamin', age:6},
+    {name: 'Teresa', age: 0}
+];
+
+function comparePerson(a, b){
+    if (a.age < b.age){
+        return -1;
+    }
+    if (a.age > b.age){
+        return 1;
+    }
+    return 0;
+}
+
+console.log(friends.sort(comparePerson));
