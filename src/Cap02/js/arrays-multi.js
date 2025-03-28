@@ -56,3 +56,9 @@ console.log(`numbers every is some: ${numbers.some(isEven)}`);
 numbers.forEach((x) => {
     console.log(`${x} é par? ${isEven(x)}`);
 });
+
+console.log('>>> Usando map e filter');
+var evenMap = numbers.map(isEven);
+console.log(evenMap);
+var filterMap = numbers.filter(isEven);
+console.log(filterMap);
