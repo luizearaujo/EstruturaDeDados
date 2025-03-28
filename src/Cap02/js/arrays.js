@@ -51,3 +51,23 @@ numbers.unshift(-2);
 console.log(numbers);
 numbers.unshift(-4, -3);
 console.log(numbers);
+
+console.log('>>> Removendo elementos de um array');
+numbers.pop();
+console.log(numbers);
+
+console.log('>>> Removendo elemento da primeira posição de um array');
+for (var i = 0; i < numbers.length; i++){
+    numbers[i] = numbers[i + 1];
+}
+console.log(numbers);
+
+console.log('>>> Usando o método shift - Removendo elemento da primeira posição de um array');
+numbers.shift();
+console.log(numbers);
+
+console.log('>>> Acrescentando e removendo elementos de uma posição específica');
+numbers.splice(5,2);
+console.log(numbers);
+numbers.splice(5,0, 20, 21, 22);
+console.log(numbers);
