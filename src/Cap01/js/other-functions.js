@@ -36,3 +36,8 @@ starWars();
 marvel();
 showMovie(movie);
 games();
+
+console.log('>>> Constant');
+
+const PI = 3.141593;
+console.log('PI: ' + PI);
