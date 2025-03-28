@@ -98,3 +98,14 @@ function restParameterFunction(x, y, ...a){
 var restParameterFunctionResult = restParameterFunction(1, 2, 'Hello', true, 7);
 console.log(restParameterFunctionResult);
 
+console.log('>>> Desestruturação de Array')
+var [x , y] = [10 , 20]
+var resultSumDefault = sumDefault(x, y);
+console.log(resultSumDefault);
+
+console.log('>>> Troca de variáveis');
+console.log(x, y);
+[x, y] = [y, x]
+console.log(x, y);
+
+
