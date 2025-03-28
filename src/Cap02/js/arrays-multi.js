@@ -62,3 +62,43 @@ var evenMap = numbers.map(isEven);
 console.log(evenMap);
 var filterMap = numbers.filter(isEven);
 console.log(filterMap);
+
+console.log('>>> reduce');
+var reduceResult = numbers.reduce((previous, current, index) => {
+    return previous + current;
+});
+console.log(reduceResult);
+
+console.log('>>> Array no ES6');
+var aEntries = numbers.entries();
+console.log(aEntries.next().value);
+
+var aKeys = numbers.keys();
+console.log(aKeys.next());
+
+var aValues = numbers.values();
+console.log(aValues.next());
+
+var numbers2 = Array.from(numbers);
+console.log(numbers2);
+
+var numbers2Even = Array.from(numbers, (x) => (x % 2 == 0));
+console.log(numbers2Even);
+
+var numbers4 = Array.of(4);
+console.log(numbers4);
+
+var numbers5 = Array.of(1,2,3,4,5);
+console.log(numbers5);
+
+var numbersCopy = Array.of(...numbers);
+console.log(numbersCopy);
+
+numbersCopy.fill(0);
+console.log(numbersCopy);
+
+numbersCopy.fill(1, 5);
+console.log(numbersCopy);
+
+numbersCopy.fill(3, 5, 6);
+console.log(numbersCopy);
