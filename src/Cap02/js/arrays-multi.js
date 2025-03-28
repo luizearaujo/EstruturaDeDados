@@ -102,3 +102,22 @@ console.log(numbersCopy);
 
 numbersCopy.fill(3, 5, 6);
 console.log(numbersCopy);
+
+var numbers = [1,2,3,4,5,6];
+var copyArray = numbers.copyWithin(0,3);
+console.log(copyArray);
+
+var numbers = [1,2,3,4,5,6];
+var copyArray = numbers.copyWithin(1,3,5);
+console.log(copyArray);
+
+var positiveNumbers = [1,2,3,4,5];
+var negativeNumbers = [-5,-4,-3,-2,-1];
+var zeroNumber = [0];
+var numbers = negativeNumbers.concat(zeroNumber, positiveNumbers);
+
+var numbersReverse = numbers.reverse()
+console.log(numbersReverse);
+
+var numbersSort = numbersReverse.sort();
+console.log(numbersSort);
