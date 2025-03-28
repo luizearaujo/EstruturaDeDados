@@ -4,8 +4,12 @@ averageTemp[0] = [1, 2, 3, 4, 5];
 averageTemp[1] = [6, 7, 8, 9, 0];
 console.log(averageTemp);
 
-for (i = 0; i < averageTemp.length; i++){
-    for (j = 0; j < averageTemp[i].length; j++){
-        console.log(`Valor da posição ${i}x${j} é: ${averageTemp[i][j]}`);
+function printMatrix(myMatrix){
+    for (i = 0; i < myMatrix.length; i++){
+        for (j = 0; j < myMatrix[i].length; j++){
+            console.log(`Valor da posição ${i}x${j} é: ${myMatrix[i][j]}`);
+        }
     }
 }
+
+printMatrix(averageTemp);
