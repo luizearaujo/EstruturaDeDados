@@ -38,3 +38,16 @@ numbers.push(11);
 console.log(numbers);
 numbers.push(12,13);
 console.log(numbers);
+
+console.log('>>> Inserindo um elemento na primeira posição');
+for (var i = numbers.length; i >= 0; i--){
+    numbers[i] = numbers[i - 1];
+}
+numbers[0] = -1;
+console.log(numbers);
+
+console.log('>>> Usando o método unshift - Inserindo um elemento na primeira posição');
+numbers.unshift(-2);
+console.log(numbers);
+numbers.unshift(-4, -3);
+console.log(numbers);
