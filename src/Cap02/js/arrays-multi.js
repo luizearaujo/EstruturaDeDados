@@ -152,3 +152,22 @@ console.log(numbers.indexOf(100));
 numbers.push(10);
 console.log(numbers.lastIndexOf(10));
 console.log(numbers.lastIndexOf(100));
+
+console.log('>>> find');
+function multipleOf13(element, index, array){
+    return (element % 13 == 0) ? true : false;
+}
+console.log(numbers.find(multipleOf13));
+console.log(numbers.findIndex(multipleOf13));
+
+
+console.log('>>> include');
+console.log(numbers.includes(10));
+console.log(numbers.includes(100));
+
+console.log('>>> String')
+var text = numbers.toString();
+console.log(text);
+
+var text = numbers.join('#');
+console.log(text);
