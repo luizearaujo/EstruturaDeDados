@@ -3,13 +3,13 @@ console.log('>>> Capitulo 3 - Pilhas');
 function Stack(){
     
     //Adiciona um novo item (ou vários itens) ao topo da pilha
-    function push(e){
-
+    this.push = function(element){
+        items.push(element);
     }
-
+    
     //Remove o item do topo da pilha. Também devolfeo elemento removido
-    function pop(){
-
+    this.pop = function(){
+        return items.pop();
     }
 
     //Devolve o elemento que está no topo da pilha. Esta não é modificada
