@@ -14,25 +14,29 @@ function Stack(){
 
     //Devolve o elemento que está no topo da pilha. Esta não é modificada
     //(o elemento não é removido; ele é devolvido apenas como informação)
-    function peek(){
-
+    this.peek = function(){
+        return items[items.length-1];
     }
 
     //Devolve true se a pilha não contiver nenhum elemento e false se o 
     //tamanho da pilha for maior que 0
-    function isEmpty(){
-
+    this.isEmpty = function(){
+        return items.length == 0;
     }
 
     //Remove todos os elementos da pilha
-    function clear(){
-
+    this.clear = function(){
+        items = [];
     }
 
     //Devolve o número de elementos contidos na pilha. É semelhante à 
     //propriedade lenght de um array
-    function size(){
+    this.size = function(){
+        return items.length;
+    }
 
+    this.print = function(){
+        console.log(items.toString());
     }
 }
 
