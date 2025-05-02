@@ -49,28 +49,49 @@ let Stack = (function () {
 
 })();
 
-function divideBy2(decNumber){
+function divideBy2(decNumber, base = 2){
 
     var remStack = new Stack(),
     rem,
-    binaryString = '';
+    binaryString = '',
+    digits = '0123456789ABCDEF';
 
     while (decNumber > 0) {
-        rem = Math.floor(decNumber % 2);
+        rem = Math.floor(decNumber % base);
         remStack.push(rem);
-        decNumber = Math.floor(decNumber / 2);
+        decNumber = Math.floor(decNumber / base);
     }
 
     while (!remStack.isEmpty()){
-        binaryString += remStack.pop().toString();
+        binaryString += digits[remStack.pop()];
     }
 
     return binaryString;
 }
 
+console.log('Base 2');
 var decNumber = 233;
 console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber));
 decNumber = 10;
 console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber));
 decNumber = 1000;
 console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber));
+
+console.log('Base 8');
+var base = 8;
+var decNumber = 233;
+console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber, base));
+decNumber = 10;
+console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber, base));
+decNumber = 1000;
+console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber, base));
+
+
+console.log('Base 16');
+var base = 16;
+var decNumber = 233;
+console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber, base));
+decNumber = 10;
+console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber, base));
+decNumber = 1000;
+console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber, base));
