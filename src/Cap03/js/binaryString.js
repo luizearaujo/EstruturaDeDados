@@ -68,5 +68,9 @@ function divideBy2(decNumber){
     return binaryString;
 }
 
-var decNumber = 2;
+var decNumber = 233;
+console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber));
+decNumber = 10;
+console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber));
+decNumber = 1000;
 console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber));
