@@ -49,7 +49,7 @@ let Stack = (function () {
 
 })();
 
-function divideBy2(decNumber, base = 2){
+function baseConverter(decNumber, base = 2){
 
     var remStack = new Stack(),
     rem,
@@ -71,27 +71,27 @@ function divideBy2(decNumber, base = 2){
 
 console.log('Base 2');
 var decNumber = 233;
-console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber));
+console.log('baseConverter(' + decNumber + '): ' + baseConverter(decNumber));
 decNumber = 10;
-console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber));
+console.log('baseConverter(' + decNumber + '): ' + baseConverter(decNumber));
 decNumber = 1000;
-console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber));
+console.log('baseConverter(' + decNumber + '): ' + baseConverter(decNumber));
 
 console.log('Base 8');
 var base = 8;
 var decNumber = 233;
-console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber, base));
+console.log('baseConverter(' + decNumber + ',' + base + '): ' + baseConverter(decNumber, base));
 decNumber = 10;
-console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber, base));
+console.log('baseConverter(' + decNumber + ',' + base + '): ' + baseConverter(decNumber, base));
 decNumber = 1000;
-console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber, base));
+console.log('baseConverter(' + decNumber + ',' + base + '): ' + baseConverter(decNumber, base));
 
 
 console.log('Base 16');
 var base = 16;
 var decNumber = 233;
-console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber, base));
+console.log('baseConverter(' + decNumber + ',' + base + '): ' + baseConverter(decNumber, base));
 decNumber = 10;
-console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber, base));
+console.log('baseConverter(' + decNumber + ',' + base + '): ' + baseConverter(decNumber, base));
 decNumber = 1000;
-console.log('divideBy2(' + decNumber + '): ' + divideBy2(decNumber, base));
+console.log('baseConverter(' + decNumber + ',' + base + '): ' + baseConverter(decNumber, base));
