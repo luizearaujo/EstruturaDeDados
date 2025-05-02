@@ -1,5 +1,7 @@
 console.log('>>> Capitulo 3 - Pilhas');
 
+let items = [];
+
 function Stack(){
     
     //Adiciona um novo item (ou vários itens) ao topo da pilha
@@ -40,4 +42,8 @@ function Stack(){
     }
 }
 
-let items = [];
+let stack = new Stack();
+console.log('stack.isEmpty: ' + stack.isEmpty());
+
+stack.push(5);
+stack.push(8);
