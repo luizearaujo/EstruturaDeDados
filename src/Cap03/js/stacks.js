@@ -43,7 +43,25 @@ function Stack(){
 }
 
 let stack = new Stack();
-console.log('stack.isEmpty: ' + stack.isEmpty());
+console.log('stack.isEmpty: ' + stack.isEmpty()); //true
+stack.print(); //empty
 
+console.log('Incluindo itens 5 e 8.')
 stack.push(5);
 stack.push(8);
+stack.print(); // 5, 8
+
+console.log('stack.peek: ' + stack.peek()); //8
+
+console.log('Inclsão do elemento 11');
+stack.push(11);
+console.log('stack.size: ' + stack.size()); //3
+console.log('stack.isEmpty: '+ stack.isEmpty()); //false
+
+console.log('Inclusão do elemento 15 e posterior remoção de  elementos');
+stack.push(15);
+stack.print(); //5, 8, 11, 15
+stack.pop();
+stack.pop();
+console.log('stack.size: ' + stack.size()); //2
+stack.print(); //5, 8
