@@ -38,3 +38,19 @@ class Stack{
         console.log(this.items.toString());
     }
 }
+
+let stack = new Stack();
+console.log('stack.isEmpty: ' + stack.isEmpty());
+stack.push(5);
+stack.push(8);
+console.log('stack.isEmpty: ' + stack.isEmpty());
+stack.print();
+
+console.log('stack.peek: ' + stack.peek());
+stack.push(11);
+stack.print();
+console.log('stack.size: ' + stack.size());
+stack.pop();
+stack.pop();
+console.log('stack.size: ' + stack.size());
+stack.print();
