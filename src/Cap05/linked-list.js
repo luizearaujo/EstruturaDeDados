@@ -3,7 +3,7 @@ let LinkedList = (function(){
     class Node{
         constructor(element){
             this.element = element;
-            this.next = next;
+            this.next = null;
         }
     }
     
@@ -19,10 +19,10 @@ let LinkedList = (function(){
             let node = new Node(element),
             current;
 
-            if (head == null){
-                head = node;
+            if (this.head == null){
+                this.head = node;
             }else{
-                current = head;
+                current = this.head;
 
                 while(current.next){
                     current = current.next;
@@ -31,7 +31,7 @@ let LinkedList = (function(){
                 current.next = node;
             }
 
-            length++;
+            this.length++;
         }
 
         insert(position, element){
@@ -71,7 +71,7 @@ let LinkedList = (function(){
     return LinkedList;
 
     
-});
+})();
 
 let list = new LinkedList();
 list.append(15);
