@@ -38,8 +38,32 @@ let LinkedList = (function(){
 
         }
 
-        removeAt(element){
+        removeAt(position){
+            if (position > -1 && position < this.length){
 
+                let current = this.head,
+                previous,
+                index = 0;
+
+                if (position === 0){
+                    this.head = current.next;
+                }else{
+
+                    while (index++ < position){
+                        previous = current;
+                        current = current.next;
+                    }
+
+                    previous.next = current.next;
+                }
+
+                this.length--;
+
+                return current.element;
+
+            }else{
+                return null;
+            }
         }
 
         remove(element){
@@ -59,7 +83,14 @@ let LinkedList = (function(){
         }
 
         toString(){
+            let current = this.head;
+            let string = '';
+            while(current){
+                string += current.element + (current.next ? ' -> ' : '');
+                current = current.next;
+            }
 
+            return string;
         }
 
         print(){
@@ -76,5 +107,13 @@ let LinkedList = (function(){
 let list = new LinkedList();
 list.append(15);
 list.append(8);
+console.log(list.toString());
 
-console.log(list);
+list.append(11);
+console.log(list.toString());
+
+list.removeAt(1);
+console.log(list.toString());
+
+list.removeAt(0);
+console.log(list.toString());
