@@ -149,8 +149,8 @@ let LinkedList = (function(){
             return string;
         }
 
-        print(){
-
+        getHead(){
+            return this.head;
         }
 
     }
@@ -209,3 +209,5 @@ console.log(list.toString());//14 -> 18 -> 13 -> 11 -> 16
 
 var isEmpty = list.isEmpty();
 console.log('isEmpty: ' + isEmpty); //false
+
+console.log(list.getHead()); //14
