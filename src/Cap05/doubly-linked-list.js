@@ -43,6 +43,42 @@ let DoublyLinkedList = (function(){
 
         insert(position, element){
 
+            if (position >= 0 && position <= this.length){
+
+                let node = new Node(element),
+                current = this.head,
+                index = 0;
+
+                if (position === 0){
+
+                    node.next = current;
+                    current.prev = node;
+                    this.head = node;
+    
+                }else{
+    
+                    while (index++ < position){
+    
+                        current = current.next;
+    
+                    }
+    
+                    node.next = current;
+                    current.prev = node;
+    
+                }
+    
+                this.length++;
+                return true;
+
+            }else{
+
+                return false;
+
+            }
+
+            
+
         }
 
         removeAt(position){
@@ -67,6 +103,21 @@ let DoublyLinkedList = (function(){
 
         toString(){
 
+            let current = this.head;
+            let string = '';
+            while(current){
+                if (current.prev == null){
+                    string += `[ |${current.element}|${current.next.element}]` + (current.next ? '<->' : '');    
+                }
+                else if(current.next == null){
+                    string += `[${current.prev.element}|${current.element}| ]` + (current.next ? '<->' : '');    
+                }
+                else {
+                    string += `[${current.prev.element}|${current.element}|${current.next.element}]` + (current.next ? '<->' : '');
+                }
+                current = current.next;
+            }
+            return string;
         }
 
     }
@@ -85,3 +136,6 @@ console.log(list);
 
 var size = list.size();
 console.log('size: ' + size); //2
+
+list.insert(0, 12);
+console.log(list.toString());
