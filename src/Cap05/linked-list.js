@@ -106,7 +106,7 @@ let LinkedList = (function(){
             if (index  === -1){
                 return null;
             }
-            
+
             return this.removeAt(index);
 
         }
@@ -131,7 +131,7 @@ let LinkedList = (function(){
         }
 
         isEmpty(){
-
+            return this.length == 0;
         }
 
         size(){
@@ -161,6 +161,10 @@ let LinkedList = (function(){
 })();
 
 let list = new LinkedList();
+
+var isEmpty = list.isEmpty();
+console.log('isEmpty: ' + isEmpty); //true;
+
 list.append(15);
 list.append(10);
 console.log(list.toString()); //15 -> 10
@@ -196,9 +200,12 @@ console.log('indexof -10: ' + index); //-1
 
 console.log(list.toString());//14 -> 10 -> 18 -> 13 -> 11 -> 16
 var removeResult = list.remove(10);
-console.log('remove result: ' + removeResult);
+console.log('remove: ' + removeResult);
 console.log(list.toString());//14 -> 18 -> 13 -> 11 -> 16
 
 removeResult = list.remove(-10);
-console.log('remove result: ' + removeResult);
+console.log('remove: ' + removeResult);
 console.log(list.toString());//14 -> 18 -> 13 -> 11 -> 16
+
+var isEmpty = list.isEmpty();
+console.log('isEmpty: ' + isEmpty); //false
