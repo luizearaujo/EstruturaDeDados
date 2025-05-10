@@ -35,7 +35,41 @@ let LinkedList = (function(){
         }
 
         insert(position, element){
+            
+            if (position >= 0 && position <= this.length){
 
+                let node = new Node(element),
+                current = this.head,
+                previous,
+                index = 0;
+
+                if (position ===0){
+                    
+                    node.next = current;
+                    this.head = node;
+
+                }else{
+                    
+                    while(index++ < position){
+                        
+                        previous = current;
+                        current = current.next;
+
+                    }
+
+                    node.next = current;
+                    previous.next = node;
+
+                }
+
+                this.length++;
+                return true;
+
+            }else{
+                
+                return false;
+
+            } 
         }
 
         removeAt(position){
@@ -79,7 +113,7 @@ let LinkedList = (function(){
         }
 
         size(){
-
+            return this.length;
         }
 
         toString(){
@@ -106,14 +140,25 @@ let LinkedList = (function(){
 
 let list = new LinkedList();
 list.append(15);
-list.append(8);
-console.log(list.toString());
+list.append(10);
+console.log(list.toString()); //15 -> 10
 
+list.append(13);
 list.append(11);
-console.log(list.toString());
-
-list.removeAt(1);
-console.log(list.toString());
+list.append(12);
+console.log(list.toString()); //15 -> 10 -> 13 -> 11 -> 12
 
 list.removeAt(0);
-console.log(list.toString());
+console.log(list.toString()); //10 -> 13 -> 11 -> 12 
+
+list.removeAt(3);
+console.log(list.toString()); //10 -> 13 -> 11
+
+list.insert(0, 14);
+console.log(list.toString()); //14 -> 10 -> 13 -> 11
+
+list.insert(list.size(), 16);
+console.log(list.toString()); //14 -> 10 -> 13 -> 11 -> 16
+
+list.insert(2, 18);
+console.log(list.toString()); //14 -> 10 -> 18 -> 13 -> 11 -> 16
