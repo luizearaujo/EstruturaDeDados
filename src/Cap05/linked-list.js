@@ -102,6 +102,13 @@ let LinkedList = (function(){
 
         remove(element){
 
+            let index = this.indexOf(element);
+            if (index  === -1){
+                return null;
+            }
+            
+            return this.removeAt(index);
+
         }
 
         indexOf(element){
@@ -186,3 +193,12 @@ console.log('indexOf 18: ' + index); //2
 
 index = list.indexOf(-10);
 console.log('indexof -10: ' + index); //-1
+
+console.log(list.toString());//14 -> 10 -> 18 -> 13 -> 11 -> 16
+var removeResult = list.remove(10);
+console.log('remove result: ' + removeResult);
+console.log(list.toString());//14 -> 18 -> 13 -> 11 -> 16
+
+removeResult = list.remove(-10);
+console.log('remove result: ' + removeResult);
+console.log(list.toString());//14 -> 18 -> 13 -> 11 -> 16
