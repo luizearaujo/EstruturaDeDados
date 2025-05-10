@@ -58,11 +58,11 @@ let DoublyLinkedList = (function(){
         }
 
         isEmpty(){
-
+            return this.length == 0;
         }
 
         size(){
-
+            return this.length;
         }
 
         toString(){
@@ -76,6 +76,12 @@ let DoublyLinkedList = (function(){
 })();
 
 var list = new DoublyLinkedList();
+var isEmpty = list.isEmpty();
+console.log('isEmpty: ' + isEmpty); //true
+
 list.append(10);
 list.append(11);
 console.log(list);
+
+var size = list.size();
+console.log('size: ' + size); //2
