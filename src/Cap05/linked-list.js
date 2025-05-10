@@ -106,6 +106,21 @@ let LinkedList = (function(){
 
         indexOf(element){
 
+            let current = this.head,
+            index = 0;
+
+            while(current){
+
+                if (element === current.element){
+                    return index;
+                }
+
+                index++;
+                current = current.next;
+            }
+
+            return -1;
+
         }
 
         isEmpty(){
@@ -162,3 +177,12 @@ console.log(list.toString()); //14 -> 10 -> 13 -> 11 -> 16
 
 list.insert(2, 18);
 console.log(list.toString()); //14 -> 10 -> 18 -> 13 -> 11 -> 16
+
+var index = list.indexOf(14); //0
+console.log('indexOf 14: ' + index); //0
+
+index = list.indexOf(18);
+console.log('indexOf 18: ' + index); //2
+
+index = list.indexOf(-10);
+console.log('indexof -10: ' + index); //-1
