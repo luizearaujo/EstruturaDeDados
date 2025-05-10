@@ -47,6 +47,7 @@ let DoublyLinkedList = (function(){
 
                 let node = new Node(element),
                 current = this.head,
+                previous,
                 index = 0;
 
                 if (position === 0){
@@ -60,11 +61,14 @@ let DoublyLinkedList = (function(){
                     while (index++ < position){
     
                         current = current.next;
+                        previous = current.prev;
     
                     }
     
                     node.next = current;
+                    node.prev = previous;
                     current.prev = node;
+                    previous.next = node;
     
                 }
     
@@ -132,10 +136,13 @@ console.log('isEmpty: ' + isEmpty); //true
 
 list.append(10);
 list.append(11);
-console.log(list);
+console.log(list.toString()); //[ |10|11] <-> [10|11| ]
 
 var size = list.size();
 console.log('size: ' + size); //2
 
 list.insert(0, 12);
-console.log(list.toString());
+console.log(list.toString()); //[ |12|10] <-> [12|10|11] <-> [10|11| ]
+
+list.insert(2, 9);
+console.log(list.toString()); //[ |12|10] <-> [12|10|9] <-> [10|9|11] <-> [9|11| ]
