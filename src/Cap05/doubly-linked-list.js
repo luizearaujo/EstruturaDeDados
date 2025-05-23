@@ -96,8 +96,6 @@ let DoublyLinkedList = (function(){
 
             }
 
-            //Verificação para atualização do tail
-
         }
 
         removeAt(position){
@@ -110,6 +108,18 @@ let DoublyLinkedList = (function(){
 
         indexOf(element){
 
+            let current = this.head,
+            index = 0;
+            while(current){
+                if (element === current.element){
+                    return index;
+                }
+
+                index++;
+                current = current.next;
+            }
+
+            return -1;
         }
 
         isEmpty(){
@@ -173,3 +183,5 @@ list.insert(4, 4);
 console.log(list.toString()); //[ |12|10] <-> [12|10|9] <-> [10|9|11] <-> [9|11| ]
 console.log('head: ' + list.head.element); //10
 console.log('tail: ' + list.tail.element); //4
+
+console.log('index [10]: ' + list.indexOf(10)); //1
