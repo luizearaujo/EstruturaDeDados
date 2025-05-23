@@ -52,36 +52,51 @@ let DoublyLinkedList = (function(){
 
                 if (position === 0){
 
-                    node.next = current;
-                    current.prev = node;
-                    this.head = node;
+                    if (!this.head){
+                        this.head = node;
+                        this.tail = node;
+                    }
+                    else{
+                        node.next = current;
+                        current.prev = node;
+                        this.head = node;
+                    }
     
-                }else{
+                } else if (position === this.length) {
+                    
+                    current = this.tail;
+                    current.next = node;
+                    node.prev = current;
+                    this.tail = node;
+                
+                } else {
     
                     while (index++ < position){
     
+                        previous = current;
                         current = current.next;
-                        previous = current.prev;
     
                     }
     
                     node.next = current;
-                    node.prev = previous;
-                    current.prev = node;
                     previous.next = node;
-    
+
+                    current.prev = node;
+                    node.prev = previous;
+
                 }
+
     
                 this.length++;
                 return true;
 
-            }else{
+            } else {
 
                 return false;
 
             }
 
-            
+            //Verificação para atualização do tail
 
         }
 
@@ -137,12 +152,24 @@ console.log('isEmpty: ' + isEmpty); //true
 list.append(10);
 list.append(11);
 console.log(list.toString()); //[ |10|11] <-> [10|11| ]
+console.log('head: ' + list.head.element); //10
+console.log('tail: ' + list.tail.element); //11
 
 var size = list.size();
 console.log('size: ' + size); //2
 
 list.insert(0, 12);
 console.log(list.toString()); //[ |12|10] <-> [12|10|11] <-> [10|11| ]
+console.log('head: ' + list.head.element); //12
+console.log('tail: ' + list.tail.element); //11
+
 
 list.insert(2, 9);
 console.log(list.toString()); //[ |12|10] <-> [12|10|9] <-> [10|9|11] <-> [9|11| ]
+console.log('head: ' + list.head.element); //10
+console.log('tail: ' + list.tail.element); //11
+
+list.insert(4, 4);
+console.log(list.toString()); //[ |12|10] <-> [12|10|9] <-> [10|9|11] <-> [9|11| ]
+console.log('head: ' + list.head.element); //10
+console.log('tail: ' + list.tail.element); //4
