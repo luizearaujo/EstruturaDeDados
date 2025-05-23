@@ -99,10 +99,53 @@ let DoublyLinkedList = (function(){
         }
 
         removeAt(position){
+            if (position > -1 && position < this.length){
 
+                let current = this.head,
+                previous,
+                next,
+                index = 0;
+
+                if (position === 0){
+                    this.head = current.next;
+                    this.head.prev = null;
+                    current.previous = this.head;
+                }else{
+
+                    while(index++ < position){
+                        previous = current;
+                        current = current.next;
+                    }
+
+                    next = current.next;
+                    previous.next = next;
+
+                    if (next != null){
+                        next.prev = previous;
+                    }
+
+                    if (position === this.length-1){
+                        this.tail = previous;
+                    }
+                    
+                }
+
+                this.length--;
+
+                return current.element;
+            }
+
+            return null;
         }
 
         remove(element){
+
+            let index = this.indexOf(element);
+            if (index === -1){
+                return null;
+            }
+
+            return this.removeAt(index);
 
         }
 
@@ -180,8 +223,23 @@ console.log('head: ' + list.head.element); //10
 console.log('tail: ' + list.tail.element); //11
 
 list.insert(4, 4);
-console.log(list.toString()); //[ |12|10] <-> [12|10|9] <-> [10|9|11] <-> [9|11| ]
+console.log(list.toString()); //[ |12|10] <-> [12|10|9] <-> [10|9|11] <-> [9|11|4] <-> [11|4| ]
 console.log('head: ' + list.head.element); //10
 console.log('tail: ' + list.tail.element); //4
 
 console.log('index [10]: ' + list.indexOf(10)); //1
+
+list.removeAt(1);
+console.log(list.toString()); //[ |12|9] <-> [12|9|11] <-> [9|11|4] <-> [11|4| ]
+console.log('head: ' + list.head.element); //10
+console.log('tail: ' + list.tail.element); //4
+
+list.remove(12);
+console.log(list.toString()); //[ |9|11] <-> [9|11|4] <-> [11|4| ]
+console.log('head: ' + list.head.element); //12
+console.log('tail: ' + list.tail.element); //4
+
+list.remove(4);
+console.log(list.toString()); //[ |9|11] <-> [9|11| ]
+console.log('head: ' + list.head.element); //12
+console.log('tail: ' + list.tail.element); //4
